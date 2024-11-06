@@ -13,7 +13,14 @@ NDIS Reporting is a web application designed to facilitate efficient data collec
 
 **2. Table of Contents**
 
-Include a table of contents for easy navigation, especially for extensive documentation.
+- Project Overview
+- Installation
+-  Project Structure
+- Usage
+- Contributing
+- Code of Conduct
+- License
+- Acknowledgments
 
 **3. Installation Instructions**
 
