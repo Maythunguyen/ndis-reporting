@@ -27,7 +27,7 @@ NDIS Reporting is a web application designed to facilitate efficient data collec
 Detail the steps required to set up the project locally:
 
 **Prerequisites**
-- Node.js: Make sure you have Node.js installed on your machine. You can download it here.
+- Node.js: Make sure you have Node.js installed on your machine. You can download it at https://nodejs.org/en.
 - Git: Ensure you have Git installed for version control.
 
 
