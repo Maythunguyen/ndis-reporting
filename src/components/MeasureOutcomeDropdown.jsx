@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tooltip, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { FormControl, Select, MenuItem, Tooltip } from '@mui/material';
 import { measureOutcomes } from '../data/measureOutcomes';
 
 const MeasureOutcomeDropdown = () => {
@@ -11,14 +11,20 @@ const MeasureOutcomeDropdown = () => {
 
     return (
         <FormControl fullWidth>
-            <InputLabel id="measure-outcome-label">Select Measure Outcome</InputLabel>
             <Select
-                labelId="measure-outcome-label"
-                id="measure-outcome-select"
                 value={selectedOutcome}
                 onChange={handleChange}
-                label="Select Measure Outcome"
+                displayEmpty
+                sx={{
+                    width: '100%',
+                    '& .MuiSelect-select': {
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                    }
+                }}
             >
+                <MenuItem value="">Select Measure Outcome</MenuItem>
                 {measureOutcomes.map((outcome) => (
                     <MenuItem
                         key={outcome.name}
