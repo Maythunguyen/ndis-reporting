@@ -1,11 +1,11 @@
-// src/hooks/useGooglePlacesAutocomplete.js
-import { useEffect, useRef, useContext } from 'react';
-import { AddressContext } from '../contexts/AddressContext';
+import { initialState, addressReducer } from '../reducers/AddressReducer';
+import { useEffect, useRef, useReducer } from 'react';
 import { loadGoogleMapsScript } from '../api/GoogleMapAPI/GoogleMapAPI';
 
 const useGooglePlacesAutocomplete = () => {
-  const { dispatch } = useContext(AddressContext);
   const autocompleteRef = useRef(null);
+  const [state, dispatch] = useReducer(addressReducer, initialState);
+
 
   useEffect(() => {
     loadGoogleMapsScript(() => {
@@ -15,7 +15,7 @@ const useGooglePlacesAutocomplete = () => {
       autocomplete.setFields(['address_components', 'formatted_address']);
       autocomplete.addListener('place_changed', () => handlePlaceSelect(autocomplete));
     });
-  }, [dispatch]);
+  }, []);
 
   const handlePlaceSelect = (autocomplete) => {
     const place = autocomplete.getPlace();
@@ -40,7 +40,7 @@ const useGooglePlacesAutocomplete = () => {
     });
   };
 
-  return autocompleteRef;
+  return [autocompleteRef, dispatch, state];
 };
 
 export default useGooglePlacesAutocomplete;

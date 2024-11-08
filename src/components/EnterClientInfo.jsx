@@ -1,6 +1,5 @@
 
 import TextField from '@mui/material/TextField';
-import { AddressProvider } from '../contexts/AddressContext';
 import GoogleMapSearch from './GoogleMapSearch';
 
 const EnterClientInfo = () => {
@@ -80,9 +79,9 @@ const EnterClientInfo = () => {
         </div>
 
         {/* Address and City */}
-        <AddressProvider>
+       
             <GoogleMapSearch />
-        </AddressProvider>
+
         {/* Start Date and Contact Number*/}
         <div className="w-full flex flex-row justify-between mb-5">
           <div className="w-[45%]">

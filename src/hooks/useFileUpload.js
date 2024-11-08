@@ -20,7 +20,7 @@ const useFileHandler = (onFileChange) => {
     const fileRemove = (file) => {
         const updatedList = fileList.filter((item) => item !== file);
         setFileList(updatedList);
-        onFileChange(updatedList);
+        if (onFileChange) onFileChange(updatedList);
     };
 
     return { wrapperRef, fileList, onDragEnter, onDragLeave, onDrop, onFileDrop, fileRemove };

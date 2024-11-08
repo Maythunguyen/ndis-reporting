@@ -1,12 +1,8 @@
-
-import { useContext } from 'react';
 import TextField from '@mui/material/TextField';
-import { AddressContext } from '../contexts/AddressContext';
 import useGooglePlacesAutocomplete from '../hooks/useGooglePlacesAutocomplete';
 
 const GoogleMapSearch = () => {
-  const { state, dispatch } = useContext(AddressContext);
-  const autocompleteRef = useGooglePlacesAutocomplete();
+  const [autocompleteRef, dispatch, state] = useGooglePlacesAutocomplete();
 
   const handleChange = (field) => (e) => {
     dispatch({ type: field, payload: e.target.value });
